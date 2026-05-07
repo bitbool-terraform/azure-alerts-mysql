@@ -5,7 +5,7 @@ resource "azurerm_monitor_metric_alert" "this" {
   resource_group_name = var.resource_group
 
   scopes = [
-    var.mysql_server.id
+    var.mysql_server_id
   ]
 
   target_resource_type     = "Microsoft.DBforMySQL/flexibleServers"
