@@ -47,7 +47,7 @@ variable "alerts" {
     storage = optional(object({
       enabled     = optional(bool, true)
       threshold   = optional(number, 85)
-      aggregation = optional(string, "Average")
+      aggregation = optional(string, "Maximum")
       severity    = optional(number, 1)
       frequency   = optional(string, "PT5M")
       window_size = optional(string, "PT15M")
@@ -73,7 +73,7 @@ variable "alerts" {
 
     slow_queries = optional(object({
       enabled     = optional(bool, false)
-      threshold   = optional(number, 10)
+      threshold   = optional(number, 5)
       aggregation = optional(string, "Total")
       severity    = optional(number, 2)
       frequency   = optional(string, "PT5M")
@@ -82,7 +82,7 @@ variable "alerts" {
 
     replica_lag = optional(object({
       enabled           = optional(bool, false)
-      threshold_seconds = optional(number, 60)
+      threshold_seconds = optional(number, 10)
       aggregation       = optional(string, "Average")
       severity          = optional(number, 1)
       frequency         = optional(string, "PT1M")
